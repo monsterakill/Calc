@@ -1,0 +1,40 @@
+﻿<Window x:Class="Calc.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Calc"
+        Title="MainWindow" Height="350" Width="550">
+    <Window.DataContext>
+        <local:CalcViewModel />
+    </Window.DataContext>
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="1"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Consolas"/>
+        </Style>
+    </Window.Resources>
+    <DockPanel>
+        <TextBox DockPanel.Dock="Top" Text="{Binding updateNumber}" Height="50" 
+                 IsEnabled="False" FontSize="30" VerticalContentAlignment="Center" 
+                 FontFamily="Consolas" Foreground="Black" MaxLength="15"/>
+        <UniformGrid Name="UGrid" Rows="5" Columns="4" Width="400">
+            <Button x:Name="num0"  Content="0" Margin="25,5,25,5" Click="num0_Click"/>
+            <Button x:Name="num1"  Content="1" Margin="25,5,25,5" Click="num1_Click"/>
+            <Button x:Name="num2"  Content="2" Margin="25,5,25,5" Click="num2_Click"/>
+            <Button x:Name="num3"  Content="3" Margin="25,5,25,5" Click="num3_Click"/>
+            <Button x:Name="num4"  Content="4" Margin="25,5,25,5" Click="num4_Click"/>
+            <Button x:Name="num5"  Content="5" Margin="25,5,25,5" Click="num5_Click"/>
+            <Button x:Name="num6"  Content="6" Margin="25,5,25,5" Click="num6_Click"/>
+            <Button x:Name="num7"  Content="7" Margin="25,5,25,5" Click="num7_Click" />
+            <Button x:Name="num8"  Content="8" Margin="25,5,25,5" Click="num8_Click"/>
+            <Button x:Name="num9"  Content="9" Margin="25,5,25,5" Click="num9_Click"/>
+            <Button x:Name="Clear"  Content="C" Margin="25,5,25,5" Click="Clear_Click" />
+            <Button x:Name="Divide"  Content="/" Margin="25,5,25,5" Click="Divide_Click"/>
+            <Button x:Name="Multiply"  Content="*" Margin="25,5,25,5" Click="Multiply_Click"/>
+            <Button x:Name="Subtract"  Content="-" Margin="25,5,25,5" Click="Subtract_Click"/>
+            <Button x:Name="Add"  Content="+" Margin="25,5,25,5" Click="Add_Click"/>
+            <Button x:Name="equal"  Content="=" Margin="25,5,25,5" Click="equal_Click"/>
+        </UniformGrid>
+    </DockPanel>
+</Window>
